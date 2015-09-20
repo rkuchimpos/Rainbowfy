@@ -6,7 +6,7 @@ __module_version__ = '1.0'
 __module_description__ = 'Rainbowfies text'
 __author__ = 'bigboy42'
 
-rainbow_codes = [13, 4, 7, 8, 3, 11, 12]
+rainbow_codes = ['13', '04', '07', '08', '03', '11', '12']
 
 def rainbow(word, word_eol, userdata):
     rainbow_text = ""
@@ -16,7 +16,7 @@ def rainbow(word, word_eol, userdata):
         for char in word_eol[1]:
             i += 1
             color = rainbow_codes[i % max_len]
-            rainbow_text += '\003' + str(color) + char
+            rainbow_text += '\003' + color + char
         hexchat.command("say {}".format(rainbow_text))
     else:
         hexchat.command("help RAINBOW <text>")
